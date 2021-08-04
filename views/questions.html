@@ -1,0 +1,34 @@
+<div class="content" ng-init="getAllQuestions()">
+    <div layout="row">
+        <div flex=""><input type="search" placeholder="Search Questions" ng-model="search"/></div>
+        <div flex="2"><md-button style="padding:3.9px;" type="button" class="md-warn" ng-click="addQuestion()">ADD QUESTION</md-button></div> 
+      </div>
+      <md-card ng-click="" ng-repeat="q in questions | filter: search " ng-cloak>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">{{ q.question }}</span>
+            <span class="md-subhead">Option A: {{ q.A }}</span>
+            <span class="md-subhead">Option B: {{ q.B }}</span>
+            <span class="md-subhead">Option C: {{ q.C }}</span>
+            <span class="md-subhead">Option D: {{ q.D }}</span>
+            <span class="md-subhead">Correct Answer: {{ q.answer }}</span><br/>
+            <img style="margin: auto; width: 200px; height: 200px;" alt="No image added" src="{{q.image}}">
+          </md-card-title-text>
+          <md-card-title-media>
+            <div class="md-media-sm card-media"></div>
+            
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button ng-click="uploadImage(q)" class="md-icon-button" aria-label="Delete">
+            <md-icon md-svg-icon="content/icons/addimg.svg"></md-icon>
+          </md-button>
+          <md-button ng-click="editPopup(q)" class="md-icon-button" aria-label="Edit">
+            <md-icon md-svg-icon="content/icons/edit.svg"></md-icon>
+          </md-button>
+          <md-button ng-click="deleteQuestion(q)" class="md-icon-button" aria-label="Delete">
+            <md-icon md-svg-icon="content/icons/delete.svg"></md-icon>
+          </md-button>
+        </md-card-actions>
+      </md-card>
+</div>

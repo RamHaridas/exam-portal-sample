@@ -1,0 +1,32 @@
+<md-dialog aria-label="Exam" flex="60">
+    <form ng-cloak>
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <h2>Add Image</h2>
+          <span flex></span>
+          <md-button class="md-icon-button" ng-click="cancel()">
+            <md-icon md-svg-src="/content/icons/close.svg" aria-label="Close dialog"></md-icon>
+          </md-button>
+        </div>
+      </md-toolbar>
+  
+      <md-dialog-content>
+        <div class="md-dialog-content">
+          <!-- contet to be added in dialog -->
+          <input type = "file" ng-model="myFile" onchange="angular.element(this).scope().loadImage(event)" accept="image/png, image/jpeg, image/jpg"/>
+            <img ng-src="{{ url }}" ng-show="url != null" style="height:200px;width:200px"/>
+            <label style="color: red;">{{notice}}</label>
+        </div>
+      </md-dialog-content>
+  
+      <md-dialog-actions layout="row">
+        <span flex></span>
+        <md-button ng-click="cancel()">
+         Cancel
+        </md-button>
+        <md-button ng-click="upload()">
+          Save
+        </md-button>
+      </md-dialog-actions>
+    </form>
+  </md-dialog>

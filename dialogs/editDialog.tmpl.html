@@ -1,0 +1,39 @@
+<md-dialog aria-label="Exam" flex="50">
+    <form ng-cloak>
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <h2>Add Exam Details</h2>
+          <span flex></span>
+          <md-button class="md-icon-button" ng-click="cancel()">
+            <md-icon md-svg-src="/content/icons/close.svg" aria-label="Close dialog"></md-icon>
+          </md-button>
+        </div>
+      </md-toolbar>
+  
+      <md-dialog-content>
+        <div class="md-dialog-content">
+          <!-- contet to be added in dialog -->
+          
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Exam Name</label>
+            <input type="text" ng-model="name" ng-required="true">
+          </md-input-container>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Marks of each question</label>
+            <input type="number" ng-model="marks" ng-required="true">
+          </md-input-container>
+         
+        </div>
+      </md-dialog-content>
+  
+      <md-dialog-actions layout="row">
+        <span flex></span>
+        <md-button ng-click="cancel()">
+         Cancel
+        </md-button>
+        <md-button ng-click="update()">
+          Save
+        </md-button>
+      </md-dialog-actions>
+    </form>
+  </md-dialog>

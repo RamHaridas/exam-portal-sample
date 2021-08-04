@@ -1,0 +1,26 @@
+<div class="content" ng-init="getAllExams()">
+  <div layout="row">
+    <div flex=""><input type="search" placeholder="Search Departments" ng-model="search"/></div>
+    <div flex="2"><md-button style="padding: 4px;" type="button" class="md-primary md-raised" ng-click="showPrompt()">ADD NEW DEPARTMENT</md-button></div> 
+  </div>
+    <div style="width: 100%; border: 0.5px solid black; margin: 10px;"></div>
+        <md-card ng-click="goToDep(dep)" ng-repeat="dep in departments | filter: search ">
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-headline">{{dep.name}}</span>
+              <span class="md-subhead">Click to open</span>
+            </md-card-title-text>
+            <md-card-title-media>
+              <div class="md-media-sm card-media"></div>
+            </md-card-title-media>
+          </md-card-title>
+          <md-card-actions layout="row" layout-align="end center">
+            <md-button ng-click="editPopup(dep)" class="md-icon-button" aria-label="Edit">
+              <md-icon md-svg-icon="content/icons/edit.svg"></md-icon>
+            </md-button>
+            <md-button ng-click="deletePopup(dep)" class="md-icon-button" aria-label="Delete">
+              <md-icon md-svg-icon="content/icons/delete.svg"></md-icon>
+            </md-button>
+          </md-card-actions>
+        </md-card>
+</div>

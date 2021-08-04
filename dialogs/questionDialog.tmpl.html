@@ -1,0 +1,61 @@
+<md-dialog aria-label="Exam" flex="60">
+    <form ng-cloak>
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <h2>Add Question</h2>
+          <span flex></span>
+          <md-button class="md-icon-button" ng-click="cancel()">
+            <md-icon md-svg-src="/content/icons/close.svg" aria-label="Close dialog"></md-icon>
+          </md-button>
+        </div>
+      </md-toolbar>
+  
+      <md-dialog-content>
+        <div class="md-dialog-content">
+          <!-- contet to be added in dialog -->
+          
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Exam Question</label>
+            <input type="text" ng-model="ques" ng-required="true">
+          </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Option A</label>
+            <input type="text" ng-model="optA" ng-required="true">
+          </md-input-container>
+          
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Option B</label>
+            <input type="text" ng-model="optB" ng-required="true">
+          </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Option C</label>
+            <input type="text" ng-model="optC" ng-required="true">
+          </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Option D</label>
+            <input type="text" ng-model="optD" ng-required="true">
+          </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Correct Answer</label>
+            <input type="text" ng-model="ans" ng-required="true">
+          </md-input-container>
+
+          <label style="color: red;">{{ mylabel }}</label>
+        </div>
+      </md-dialog-content>
+  
+      <md-dialog-actions layout="row">
+        <span flex></span>
+        <md-button ng-click="cancel()">
+         Cancel
+        </md-button>
+        <md-button ng-click="addQuestion()">
+          Save
+        </md-button>
+      </md-dialog-actions>
+    </form>
+  </md-dialog>
